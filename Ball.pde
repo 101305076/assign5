@@ -30,8 +30,9 @@ class Ball{
   Ball(int myBallX,int myBallY){
     x = myBallX;
     y = myBallY;
-    xSpeed = 5;
-    ySpeed = 3;
+    xSpeed = random(2,8);
+    ySpeed = random(2,8);
+   
     size = 20;
   }
 
