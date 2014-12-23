@@ -31,7 +31,7 @@ class Ball{
     x = myBallX;
     y = myBallY;
     xSpeed = random(-6,6);
-    ySpeed = random(0,4);
+    ySpeed = random(2,7);
    
     size = 20;
   }
