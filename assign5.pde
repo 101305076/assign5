@@ -156,15 +156,38 @@ void reset() {
   }
   brickMaker(50);  
 }
-void keyPressed(){
-  if(key == ENTER && status == GAME_LOSE || status == GAME_WIN){
-    status = GAME_PRPRTON;    
-  } 
-  life = 3;
-  reset();
-  if(key == ENTER && status ==  GAME_PRPRTON){
-    status = GAME_START;    
-  } 
+void keyPressed() {
+  if (keyCode==ENTER) {
+  /*status = GAME_START;
+  }
+  statusCtrl();
+}
+void statusCtrl() {
+  if (key == ENTER) {*/
+    switch(status) {
+    case GAME_START:
+      status = GAME_RUN;
+      break;
+      /*-----------add things here--------*/
+    case GAME_PLAYING:
+      status = GAME_PAUSE;
+      break;   
+    case GAME_PAUSE:
+      status = GAME_PLAYING;
+      break;
+    case GAME_WIN:
+      status = GAME_START;
+      reset();
+      break;
+    case GAME_LOSE:
+      status = GAME_RUN;
+      break;
+    case GAME_OVER:
+      status = GAME_START;
+      reset();
+      break;  
+    }
+  }
 }
 void mousePressed(){
   if(mouseButton == RIGHT){
